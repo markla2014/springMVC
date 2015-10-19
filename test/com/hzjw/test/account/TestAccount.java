@@ -45,7 +45,7 @@ public class TestAccount {
 	@Test
 	public void testFindByPage(){
 		Pager<Account> pager=as.findByPage(0, 2);
-		System.out.println(pager.getTotalNum());
+		System.out.println("the total pagenum is: "+pager.getTotalNum());
 		for(Account account:pager.getPageList()){
 			System.out.println(account.getName());
 		}

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.hzjw.common.Pager;
 import com.hzjw.entity.Account;
 import com.hzjw.service.AccountService;
 
@@ -22,5 +23,17 @@ public String addAccount(HttpServletRequest req ){
 	as.save(acc);
 	req.setAttribute("key", "success");
 	return "hzjw";
+}
+@RequestMapping("/findBypage")
+public String findByPage(HttpServletRequest req){
+	int pageSize=3;
+	int pageNo=0;
+	String sPageNo=req.getParameter("pager.offset");
+	if(sPageNo!=null){
+		pageNo=Integer.parseInt(sPageNo);
+	}
+	Pager<Account> pager=as.findByPage(pageNo, pageSize);
+	req.setAttribute("pager",pager);
+	return "findByPage";
 }
 }
