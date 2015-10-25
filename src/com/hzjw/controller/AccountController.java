@@ -24,7 +24,7 @@ public String addAccount(HttpServletRequest req ){
 	req.setAttribute("key", "success");
 	return "hzjw";
 }
-@RequestMapping("/findBypage")
+@RequestMapping("/findByPage")
 public String findByPage(HttpServletRequest req){
 	int pageSize=3;
 	int pageNo=0;

@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+
+
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -9,7 +12,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
+<base href="<%=basePath%>"><!--如果找不到基础路径加上这个标签 -->
 
 <title>My JSP 'index.jsp' starting page</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -31,5 +34,6 @@
 	<input type="submit" value="注册">
 	<br>
 	</form>
+	<a href="account/findByPage">分页显示</a>
 </body>
 </html>
